@@ -4,10 +4,11 @@ class Persona {
     private $age;
 
     public function setAge($age) {
-        if (!is_int($age)) {
+        if (is_int($age)) {
+            $this->age = $age;
+        } else {
             throw new InvalidArgumentException('L età deve essere un numero intero.');
         }
-        $this->age = $age;
     }
 
     public function getAge() {
@@ -15,20 +16,13 @@ class Persona {
     }
 }
 
-
 $persona = new Persona();
 
 try {
-    $persona->setAge(25);
+    $persona->setAge('stringa'); 
     echo "Età impostata con successo: " . $persona->getAge();
 } catch (InvalidArgumentException $e) {
     echo "Errore: " . $e->getMessage();
 }
+
 ?>
-
-
-<?php
-
-class Persona {
-    private function setAge(age)
-}
