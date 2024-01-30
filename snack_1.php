@@ -1,7 +1,7 @@
 <?php
 
 class Persona {
-    private $age;
+    protected $age;
 
     public function setAge($age) {
         if (is_int($age)) {
